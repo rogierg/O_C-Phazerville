@@ -34,6 +34,7 @@ namespace menu = OC::menu;
 #endif
 // #include "Passencore.h"
 #include "CaptainMIDI.h"
+#include "MPCMiniGrid.h"
 #include "TheDarkestTimeline.h"
 #include "Enigma.h"
 #ifdef ENABLE_APP_NEURAL_NETWORK
@@ -77,6 +78,7 @@ static AppContainer<void // this space intentionally left blank
 #ifdef ENABLE_APP_MIDI
   , AppCaptainMIDI
 #endif
+  , AppMPCMiniGrid
 #ifdef ENABLE_APP_DARKEST_TIMELINE
   , TheDarkestTimeline
 #endif
@@ -136,7 +138,7 @@ static AppContainer<void // this space intentionally left blank
   , AppWaveformEditor
 #endif
   , AppBackup
-> app_container;
+ > app_container;
 
 static_assert(decltype(app_container)::TotalAppDataStorageSize() < AppData::kAppDataSize,
               "Apps use too much EEPROM space!");
